@@ -1,0 +1,16 @@
+<div style="text-align: center">
+  <h1>
+    <i class="wi wi-barometer"></i> Your Local Weather Forecast
+  </h1>
+  
+  <p>Current Position: {{ lati }} / {{ loti }}
+ </p>
+
+  <button (click)="getForecast()">Get Forecast</button>
+  
+  <h1> Today's Forecast</h1>
+  <p>
+    {{weatherForecastData && weatherForecastData.name}}   - {{ weatherForecastData && weatherForecastData.main.temp}}      °C  - 
+  </p>
+</div>
+
