@@ -2,15 +2,15 @@
   <h1>
     <i class="wi wi-barometer"></i> Your Local Weather Forecast
   </h1>
-  
   <p>Current Position: {{ lati }} / {{ loti }}
  </p>
-
   <button (click)="getForecast()">Get Forecast</button>
-  
   <h1> Today's Forecast</h1>
-  <p>
-    {{weatherForecastData && weatherForecastData.name}}   - {{ weatherForecastData && weatherForecastData.main.temp}}      °C  - 
-  </p>
+  <ul style="list-style-type: none" >
+    <li>Location: {{weatherForecastData && weatherForecastData.name}}</li>
+    <li>Description: {{ weatherForecastData && weatherForecastData.weather[0].main}}</li>
+    <li>Temperature: {{ weatherForecastData && weatherForecastData.main.temp}}   °C </li>
+    <li>Wind: {{ weatherForecastData && weatherForecastData.wind.speed}} m/s </li>
+  </ul>
 </div>
 
