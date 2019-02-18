@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
 
+##Live test
+
+Go to https://angular-pauli.herokuapp.com/ for a live presentation of this repo.
+
 ## About 
 
 This is a personal project for learning Angular. The idea is to make a website to display weather using openweathermap.org API. 
