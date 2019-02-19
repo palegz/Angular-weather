@@ -4,13 +4,49 @@
   </h1>
   <p>Current Position: {{ lati }} / {{ loti }}
  </p>
-  <button (click)="getForecast()">Get Forecast</button>
-  <h1> Today's Forecast</h1>
-  <ul style="list-style-type: none" >
+
+  <h1> Click "Get Weather" to get your local weather</h1>
+  <button (click)="getForecast()" class="btn primary">Get Weather</button>
+  <ul style="list-style-type: none; display:inline" >
     <li>Location: {{weatherForecastData && weatherForecastData.name}}</li>
     <li>Description: {{ weatherForecastData && weatherForecastData.weather[0].main}}</li>
     <li>Temperature: {{ weatherForecastData && weatherForecastData.main.temp}}   °C </li>
     <li>Wind: {{ weatherForecastData && weatherForecastData.wind.speed}} m/s </li>
+  </ul>
+  <h1>Search for next 12 hour forecast by typing in your city name!</h1>
+  <pre>
+      <input type="text"  #titleInput>
+      <button type="submit" (click) = 'onSubmit(titleInput.value)' class="btn primary">Search</button>
+<h2 style="float: inline-end">
+          Location: {{ fiveDayForecastData && fiveDayForecastData.city.name}}
+</h2>
+      <p style= " color: firebrick">
+        {{errorMessage}}
+      </p>
+    </pre>
+    <h2>Next 3 hours</h2>
+  <ul style="list-style-type: none; display:inline" >
+      <li>Temperature: {{ fiveDayForecastData && fiveDayForecastData.list[0].main.temp}} °C </li>
+      <li>Description: {{ fiveDayForecastData && fiveDayForecastData.list[0].weather[0].description}}</li>
+      <li>Wind speed: {{ fiveDayForecastData && fiveDayForecastData.list[0].wind.speed}} m/s</li>
+  </ul>
+  <h2>Next 6 hours</h2>
+  <ul style="list-style-type: none; display:inline" >
+      <li>Temperature: {{ fiveDayForecastData && fiveDayForecastData.list[1].main.temp}} °C </li>
+      <li>Description: {{ fiveDayForecastData && fiveDayForecastData.list[1].weather[0].description}}</li>
+      <li>Wind speed: {{ fiveDayForecastData && fiveDayForecastData.list[1].wind.speed}} m/s</li>
+  </ul>
+  <h2>Next 9 hours</h2>
+  <ul style="list-style-type: none; display:inline" >
+      <li>Temperature: {{ fiveDayForecastData && fiveDayForecastData.list[2].main.temp}} °C </li>
+      <li>Description: {{ fiveDayForecastData && fiveDayForecastData.list[2].weather[0].description}}</li>
+      <li>Wind speed: {{ fiveDayForecastData && fiveDayForecastData.list[2].wind.speed}} m/s</li>
+  </ul>
+  <h2>Next 12 hours</h2>
+  <ul style="list-style-type: none; display:inline" >
+      <li>Temperature: {{ fiveDayForecastData && fiveDayForecastData.list[3].main.temp}} °C </li>
+      <li>Description: {{ fiveDayForecastData && fiveDayForecastData.list[3].weather[0].description}}</li>
+      <li>Wind speed: {{ fiveDayForecastData && fiveDayForecastData.list[3].wind.speed}} m/s</li>
   </ul>
 </div>
 

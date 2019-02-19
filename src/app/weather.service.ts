@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams } from '@angular
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { Weather } from './weather.model';
+import { ObserveOnMessage } from 'rxjs/internal/operators/observeOn';
 
 
 
@@ -22,4 +23,9 @@ export class WeatherService {
     return this.http.get(`https://api.openweathermap.org/data/2.5/weather?lat=${(lati)}&lon=${loti}&APPID=2ccc32cc195c49726f1ee7f58a717fb6&units=metric`);
    }
    
+   getWeatherByCityName(city: string): Observable<any>{
+    console.log("5 day forecast fetched")
+    return this.http.get(`https://api.openweathermap.org/data/2.5/forecast?q=${(city)}&APPID=2ccc32cc195c49726f1ee7f58a717fb6&units=metric`);
+   }
+
 }
